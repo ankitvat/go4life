@@ -100,6 +100,17 @@ export default function Landing() {
             </button>
           </div>
         </div>
+        <div className="footer">
+          <div className="footer-section">
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Twitter</p>
+          </div>
+          <div className="footer-section">
+            <p>Contact Us</p>
+            <p>About</p>
+          </div>
+        </div>
       </div>
     </>
   );
