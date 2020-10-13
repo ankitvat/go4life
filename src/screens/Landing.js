@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import ad from '../assets/ad.png';
 import { POST } from '../utils/api.js';
 import logo from '../assets/logo.png';
+import tick from '../assets/tick.png';
 
 export default function Landing() {
   const myRef = useRef(null);
@@ -9,6 +10,7 @@ export default function Landing() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async () => {
     if(name.length === 0) {
@@ -40,7 +42,7 @@ export default function Landing() {
         setMessage("An error occured, please try again");
     }
     else if(response.status === 201) {
-      setMessage("Your request was submitted successfully!");
+      setSuccess(true);
       setName("");
       setPhone("");
       setEmail("");
@@ -80,25 +82,33 @@ export default function Landing() {
       </div>
       <div ref={myRef} className="form-control">
         <div className="form-content">
-          <div className="form">
-            <p>Your first step to the freshest apples</p>
-            <input
-              placeholder="Name"
-              value={name}
-              onChange={e => setName(e.target.value)}/>
-            <input
-              placeholder="Phone"
-              value={phone}
-              onChange={e => setPhone(e.target.value)}/>
-            <input
-              placeholder="Email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}/>
-            <p className="message">{message}</p>
-            <button onClick={handleSubmit}>
-              Submit
-            </button>
-          </div>
+          {!success ?
+            <div className="form">
+              <p>Your first step to the freshest apples</p>
+              <input
+                placeholder="Name"
+                value={name}
+                onChange={e => setName(e.target.value)}/>
+              <input
+                placeholder="Phone"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}/>
+              <input
+                placeholder="Email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}/>
+              <p className="message">{message}</p>
+              <button onClick={handleSubmit}>
+                Submit
+              </button>
+            </div> :
+            <div className="form-success">
+              <img
+                alt="tick"
+                src={tick}
+              />
+            </div>
+          }
         </div>
         <div className="footer">
           <div className="footer-section">
