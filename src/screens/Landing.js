@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ad from '../assets/ad.png';
 import { POST } from '../utils/api.js';
+import logo from '../assets/logo.png';
 
 export default function Landing() {
   const myRef = useRef(null);
@@ -52,7 +53,13 @@ export default function Landing() {
     <>
       <div className="landing-control">
         <div className="landing-intro">
+          <img
+            alt="logo"
+            className="landing-logo"
+            src={logo}
+          />
           <div className="intro-content">
+
             <p>Fresh apples, from the land of Karan Chauhan</p>
             <p>
               Hassle free. Free Delivery at your door step

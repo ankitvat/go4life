@@ -26,15 +26,28 @@
       margin-bottom: 40px;
     }
 
+    .landing-logo {
+      width: 25%;
+      margin-left: 90px;
+
+      @include sm {
+        width: 40%;
+        margin-left: 12px;
+      }
+    }
+
     .intro-content {
       margin-left: auto;
       margin-right: auto;
       width: 70%;
+      height: 100%;
+      margin-bottom: 80px;
 
       @include sm {
         width: 90%;
         display: flex;
         flex-direction: column;
+        margin-bottom: 0;
       }
 
       p {
