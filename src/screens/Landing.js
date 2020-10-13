@@ -143,6 +143,13 @@ export default function Landing() {
         </div>
         <div className="footer">
           <div className="footer-section">
+            <img
+              alt="logo"
+              className="landing-logo"
+              src={logo}
+            />
+          </div>
+          <div className="footer-section">
             <p>Facebook</p>
             <p>Instagram</p>
             <p>Twitter</p>

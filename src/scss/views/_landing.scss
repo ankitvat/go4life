@@ -143,19 +143,15 @@
 
 .form-control {
   height: calc(100vh);
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
   overflow: hidden;
 
-  @include xl {
-    max-width: 80vw;
-  }
-
   .form-content {
-    width: 100%;
-    height: calc(100% - 60px);
+    width: 90%;
+    height: calc(100% - 160px);
     display: flex;
     align-items: center;
 
@@ -184,7 +180,7 @@
       }
 
       @include sm {
-        width: 90%;
+        width: 100%;
       }
 
       input {
@@ -237,32 +233,49 @@
   .footer {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     flex-wrap: wrap;
-    width: 100%;
-    height: 60px;
+    width: calc(100% - 40px);
+    padding: 20px;
     box-shadow: 0px 2px 4px $black;
+
+    @include sm {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+    }
 
     .footer-section {
       display: flex;
-      flex-wrap: wrap;
-    }
-
-    p {
-      font-size: 20px;
-      margin: 0px 10px;
-      cursor: pointer;
-      -moz-user-select: none;
-      -khtml-user-select: none;
-      -webkit-user-select: none;
-
-      &:hover {
-        transition: 0.3s all;
-        color: $red;
-      }
+      flex-direction: column;
 
       @include sm {
-        font-size: 16px;
+        flex-direction: row;
+      }
+
+      p {
+        font-size: 20px;
+        margin: 10px 10px;
+        cursor: pointer;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+
+        &:hover {
+          transition: 0.3s all;
+          color: $red;
+        }
+
+        @include sm {
+          font-size: 16px;
+        }
+      }
+
+      img {
+        width: 120px;
+        height: 70px;
       }
     }
   }
