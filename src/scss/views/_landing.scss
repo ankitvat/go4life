@@ -148,6 +148,12 @@
         font-size: 18px;
       }
 
+      .error {
+        border-style: solid;
+        border-width: 2px;
+        border-color: $red;
+      }
+
       @include sm {
         width: 90%;
       }
@@ -156,6 +162,7 @@
         @extend .main-input;
         width: 45%;
         margin-top: 20px;
+        border-radius: 4px;
 
         @include sm {
           width: 90%;

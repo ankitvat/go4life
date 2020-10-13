@@ -10,19 +10,23 @@ export default function Landing() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async () => {
     if(name.length === 0) {
       setMessage("Please enter your name");
+      setError("name");
       return;
     }
     else if(phone.length === 0) {
       setMessage("Please enter your phone number");
+      setError("phone");
       return;
     }
     else if(email.length === 0) {
       setMessage("Please enter your email");
+      setError("email");
       return;
     }
 
@@ -88,15 +92,30 @@ export default function Landing() {
               <input
                 placeholder="Name"
                 value={name}
-                onChange={e => setName(e.target.value)}/>
+                className={error === "name" ? "error" : ""}
+                onChange={e => {
+                  setName(e.target.value);
+                  setError("");
+                  setMessage("");
+                }}/>
               <input
                 placeholder="Phone"
                 value={phone}
-                onChange={e => setPhone(e.target.value)}/>
+                className={error === "phone" ? "error" : ""}
+                onChange={e => {
+                  setPhone(e.target.value);
+                  setError("");
+                  setMessage("");
+                }}/>
               <input
                 placeholder="Email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}/>
+                className={error === "email" ? "error" : ""}
+                onChange={e => {
+                  setEmail(e.target.value);
+                  setError("");
+                  setMessage("");
+                }}/>
               <p className="message">{message}</p>
               <button onClick={handleSubmit}>
                 Submit
