@@ -22,13 +22,19 @@
     margin-left: auto;
     margin-right: auto;
 
-    @include lg {
-      margin-bottom: 40px;
-    }
+
 
     .landing-logo {
-      width: 25%;
-      margin-left: 90px;
+      width: 20%;
+      margin-left: 100px;
+      position: absolute;
+      top: 2%;
+      left: 1%;
+      width: 150px;
+      height: 90px;
+
+
+
 
       @include sm {
         width: 40%;
@@ -41,7 +47,7 @@
       margin-right: auto;
       width: 70%;
       height: 100%;
-      margin-bottom: 80px;
+
 
       @include sm {
         width: 90%;
