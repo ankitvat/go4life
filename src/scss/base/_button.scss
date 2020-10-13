@@ -5,23 +5,25 @@
   display: block;
   padding: 12px 15px;
   padding-top: 16px;
-  background-color: $red;
+  background-color: $white;
+  border-color: $black;
+  border: 1px solid;
   font-size: 18px;
   font-family: $font-stack ;
 
   font-weight: 600;
   transition: 0.5s all ;
-  color: $background;
-  border: none;
+  color: $black;
+
 
   border-radius: 25px;
 
   &:hover {
     cursor: pointer;
-    background: $red-hover;
-    border: none;
+    color: $red;
+    border: 1px solid $red;
     transition: 0.5s all ;
-    transform: translateY(-2px);
+
 
     outline: none;
   }

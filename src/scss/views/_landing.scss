@@ -35,7 +35,8 @@
     .landing-logo {
       width: 150px;
       height: 90px;
-      animation: 0.5s ease-out 0s 1 slide;
+      margin-top: 20px;
+      animation: 1s ease-out 0s 1 slide;
     }
   }
 
@@ -269,7 +270,7 @@
         margin: 10px 10px;
         cursor: pointer;
         font-family: $font-footer;
-        text-transform: uppercase;
+
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
