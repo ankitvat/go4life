@@ -4,9 +4,13 @@
   min-width: 120px;
   display: block;
   padding: 12px 15px;
+  padding-top: 16px;
   background-color: $red;
   font-size: 18px;
+  font-family: $font-stack ;
+
   font-weight: 600;
+  transition: 0.5s all ;
   color: $background;
   border: none;
 
@@ -16,6 +20,9 @@
     cursor: pointer;
     background: $red-hover;
     border: none;
+    transition: 0.5s all ;
+    transform: translateY(-2px);
+
     outline: none;
   }
   &:focus{
