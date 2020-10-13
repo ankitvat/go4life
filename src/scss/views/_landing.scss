@@ -47,6 +47,8 @@
 
       button {
         @extend .main-btn;
+        padding-left: 25px;
+        padding-right: 25px;
 
         @include sm {
           align-self: center;
