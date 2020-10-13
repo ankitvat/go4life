@@ -3,6 +3,8 @@ import ad from '../assets/ad.png';
 import { POST } from '../utils/api.js';
 import logo from '../assets/logo.png';
 import tick from '../assets/tick.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAppleAlt, faTruck, faSprayCan } from '@fortawesome/free-solid-svg-icons';
 
 export default function Landing() {
   const myRef = useRef(null);
@@ -65,14 +67,23 @@ export default function Landing() {
             src={logo}
           />
           <div className="intro-content">
+            <div className="content-line">
+              <p>Fresh apples, from the land of Karan Chauhan</p>
+            </div>
 
-            <p>Fresh apples, from the land of Karan Chauhan</p>
-            <p>
-              Hassle free. Free Delivery at your door step
-            </p>
-            <p>
-              Pesticides and chemicals free
-            </p>
+            <div className="content-line">
+              <div className="icon-wrapper">
+                <FontAwesomeIcon className="icon" icon={faTruck} size="1x"/>
+              </div>
+              <p>Hassle free. Free Delivery at your door step</p>
+            </div>
+
+            <div className="content-line">
+              <div className="icon-wrapper">
+                <FontAwesomeIcon className="icon" icon={faSprayCan} size="1x"/>
+              </div>
+              <p>Pesticides and chemicals free</p>
+            </div>
             <button onClick={scrollToRef}>
               Know More
             </button>

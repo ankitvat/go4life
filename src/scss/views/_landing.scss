@@ -53,8 +53,44 @@
     .intro-content {
       margin-left: auto;
       margin-right: auto;
-      width: 70%;
+      width: 80%;
       height: 100%;
+
+      .content-line {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        animation: 0.5s ease-out 0s 1 slide;
+
+        .icon-wrapper {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border-style: dotted;
+          border-width: 2px;
+          border-color: $red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon {
+            font-size: 20px;
+            color: $red;
+          }
+        }
+
+        p {
+          @extend .p;
+          width: 90%;
+          margin-left: 10px;
+          margin-bottom: 10px;
+
+          @include sm {
+            font-size: 20px;
+          }
+        }
+      }
 
       @include sm {
         width: 90%;
@@ -63,18 +99,11 @@
         margin-bottom: 0;
       }
 
-      p {
-        @extend .p;
-
-        @include sm {
-          font-size: 20px;
-        }
-      }
-
       button {
         @extend .main-btn;
         padding-left: 25px;
         padding-right: 25px;
+        margin-top: 20px;
         animation: 0.5s ease-out 0s 1 slide;
 
         @include sm {
@@ -230,6 +259,10 @@
       &:hover {
         transition: 0.3s all;
         color: $red;
+      }
+
+      @include sm {
+        font-size: 16px;
       }
     }
   }
