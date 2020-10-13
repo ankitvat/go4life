@@ -107,6 +107,7 @@ export default function Landing() {
                 alt="tick"
                 src={tick}
               />
+              <p>Your request was successfully submitted!</p>
             </div>
           }
         </div>
