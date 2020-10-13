@@ -16,13 +16,14 @@
 .landing-control {
   height: calc(100vh);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
 
   @include xl {
-    max-width: 80vw;
+    max-width: 90vw;
   }
 
   @include lg {
@@ -30,111 +31,117 @@
     justify-content: center;
   }
 
-  .landing-intro {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
+  .landing-header {
     .landing-logo {
-      width: 20%;
-      position: absolute;
-      top: 2%;
-      left: 8%;
       width: 150px;
       height: 90px;
       animation: 0.5s ease-out 0s 1 slide;
-
-      @include sm {
-        width: 35%;
-        margin-left: 12px;
-      }
-    }
-
-    .intro-content {
-      margin-left: auto;
-      margin-right: auto;
-      width: 80%;
-      height: 100%;
-
-      .content-line {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        animation: 0.5s ease-out 0s 1 slide;
-
-        .icon-wrapper {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          border-style: dotted;
-          border-width: 2px;
-          border-color: $red;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          .icon {
-            font-size: 20px;
-            color: $red;
-          }
-        }
-
-        p {
-          @extend .p;
-          width: 90%;
-          margin-left: 10px;
-          margin-bottom: 10px;
-
-          @include sm {
-            font-size: 20px;
-          }
-        }
-      }
-
-      @include sm {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0;
-      }
-
-      button {
-        @extend .main-btn;
-        padding-left: 25px;
-        padding-right: 25px;
-        margin-top: 20px;
-        animation: 0.5s ease-out 0s 1 slide;
-
-        @include sm {
-          align-self: center;
-        }
-      }
     }
   }
 
-  .landing-ad {
+  .landing-wrapper {
     width: 100%;
-    text-align: center;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    .ad-image {
+    @include sm {
+      flex-direction: column;
+    }
+
+    .landing-intro {
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
-      animation: 0.5s ease-out 0s 1 slide;
 
-      @include sm {
-        margin-top: 20px;
-      }
+      .intro-content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: calc(100%-90px);
 
-      img {
-        width: 440px;
-        height: 340px;
-        border-radius: 8px;
-        box-shadow: 0px 4px 6px $black;
+        .content-line {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          animation: 0.5s ease-out 0s 1 slide;
+
+          .icon-wrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-style: solid;
+            border-width: 3px;
+            border-color: $red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+              font-size: 20px;
+              color: $red;
+            }
+          }
+
+          p {
+            @extend .p;
+            width: 90%;
+            margin-left: 10px;
+            margin-bottom: 10px;
+
+            @include sm {
+              font-size: 20px;
+            }
+          }
+        }
 
         @include sm {
           width: 90%;
-          height: 40%;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 0;
+        }
+
+        button {
+          @extend .main-btn;
+          padding-left: 25px;
+          padding-right: 25px;
+          margin-top: 20px;
+          animation: 0.5s ease-out 0s 1 slide;
+
+          @include sm {
+            align-self: center;
+          }
+        }
+      }
+    }
+
+    .landing-ad {
+      width: 100%;
+      text-align: center;
+
+      .ad-image {
+        margin-left: auto;
+        margin-right: auto;
+        animation: 0.5s ease-out 0s 1 slide;
+
+        @include sm {
+          margin-top: 20px;
+        }
+
+        img {
+          width: 440px;
+          height: 340px;
+          border-radius: 8px;
+          box-shadow: 0px 4px 6px $black;
+
+          @include sm {
+            width: 90%;
+            height: 40%;
+          }
         }
       }
     }
@@ -218,13 +225,17 @@
       text-align: center;
       animation: fade 1s linear;
 
+      @include sm {
+        width: 90%;
+      }
+
       img {
-        width: 30%;
+        width: 20%;
       }
 
       p {
         font-size: 22px;
-        color: $red;
+        color: $green;
         margin-top: 40px;
       }
     }
@@ -257,7 +268,7 @@
         font-size: 20px;
         margin: 10px 10px;
         cursor: pointer;
-        font-family: sans-serif;
+        font-family: $font-footer;
         text-transform: uppercase;
         -moz-user-select: none;
         -khtml-user-select: none;
