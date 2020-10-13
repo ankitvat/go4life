@@ -1,7 +1,7 @@
 /* Home Page */
 
 .landing-control {
-  height: calc(100vh - 60px);
+  height: calc(100vh);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,7 +79,7 @@
 } // home-control
 
 .form-control {
-  height: calc(100vh - 60px);
+  height: calc(100vh);
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
@@ -130,7 +130,7 @@
       button {
         @extend .main-btn;
         margin-top: 20px;
-        
+
         width: 35%;
         font-size: 24px;
 

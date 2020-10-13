@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 function Layout({ children }) {
   return (
     <Fragment>
-      <Navbar />
+      {/*<Navbar />*/}
       <div className="base-control">{children}</div>
     </Fragment>
   );
